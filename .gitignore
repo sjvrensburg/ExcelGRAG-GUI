@@ -1,0 +1,7 @@
+/target
+/crates/*/target
+node_modules/
+frontend/dist/*
+!frontend/dist/.gitkeep
+corpus/
+*.local

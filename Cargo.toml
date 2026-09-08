@@ -1,0 +1,33 @@
+[workspace]
+resolver = "2"
+members = ["crates/eg-gui"]
+
+[workspace.dependencies]
+eg-mcp = { path = "../ExcelGRAG/crates/eg-mcp" }
+eg-graph = { path = "../ExcelGRAG/crates/eg-graph" }
+eg-index = { path = "../ExcelGRAG/crates/eg-index" }
+eg-retrieve = { path = "../ExcelGRAG/crates/eg-retrieve" }
+eg-ingest = { path = "../ExcelGRAG/crates/eg-ingest" }
+eg-structure = { path = "../ExcelGRAG/crates/eg-structure" }
+eg-model = { path = "../ExcelGRAG/crates/eg-model" }
+
+anyhow = "1"
+axum = { version = "0.8", features = ["ws"] }
+clap = { version = "4", features = ["derive"] }
+futures = "0.3"
+notify = "8"
+petgraph = "0.8"
+rust-embed = "8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+webbrowser = "1"
+
+# The same vendored, patched calamine ExcelGRAG builds against. Patches apply
+# per-workspace, so a build here would otherwise get the stock crate and read
+# workbooks differently than the corpus that taught it. Drop this section when
+# ExcelGRAG does (see its root Cargo.toml).
+[patch.crates-io]
+calamine = { path = "../ExcelGRAG/vendor/calamine" }
