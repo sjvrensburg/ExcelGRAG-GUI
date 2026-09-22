@@ -1,5 +1,7 @@
 # ExcelGRAG-GUI
 
+**RETIRED --- [ExcelGRAG](https://github.com/sjvrensburg/ExcelGRAG) has its own GUI. Please use that.**
+
 A local web GUI over an [ExcelGRAG](https://github.com/sjvrensburg/ExcelGRAG)
 corpus: live, interactive views of the property graphs `eg index` builds, with
 the engine's own search and retrieval wired to the canvas.
